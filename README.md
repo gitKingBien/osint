@@ -13,8 +13,7 @@ theHarbienster will search your input using Google Advanced Search in the follow
 
 
 
-=================================================
-Common search techniques
+        Common search techniques
         Search social media
 
         Put @ in front of a word to search social media. For example: @twitter.
@@ -47,5 +46,4 @@ Common search techniques
         Put "cache:" in front of the site address.
 
         Important: Not all search operators return exhaustive results. 
-        
-Reference: https://support.google.com/websearch/answer/2466433?sjid=189147638354375566-AP
+        https://support.google.com/websearch/answer/2466433?sjid=189147638354375566-AP
