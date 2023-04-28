@@ -1,4 +1,4 @@
-# theHarbiensterosint
+# theHarbienster Social Media OSINT
 Social Media OSIT
 
 I like using the theHarvester tool as I love demontrating it to my students.
