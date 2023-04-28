@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HarBienster</title>
+    <style>
+      body {
+        background-color: #1a1a1a;
+        color: #c6c6c6;
+        font-family: monospace;
+        font-size: 16px;
+      }
+      label {
+        color: #c6c6c6;
+      }
+      input {
+        background-color: #2d2d2d;
+        border: none;
+        color: #c6c6c6;
+        font-family: monospace;
+        font-size: 16px;
+        padding: 5px;
+        margin-right: 10px;
+      }
+      button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+      a {
+        color: #c6c6c6;
+        text-decoration: none;
+        border-bottom: 1px dotted #c6c6c6;
+      }
+      a:hover {
+        color: #b3b3b3;
+        border-bottom: 1px dotted #b3b3b3;
+      }
+      #result {
+        margin-top: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>theHarbienster - A social media OSINT tool</p>
+    <label>Enter keyword:</label>
+    <input type="text" id="keywordInput">
+    <button onclick="search()">Search</button>
+    <br>
+    <p id="result"></p>
+
+    <script>
+function search() {
+  const keywordInput = document.getElementById("keywordInput").value;
+  const keywords = keywordInput.split(",").map(keyword => `"${keyword.trim()}"`).join(" OR ");
+  const queryLinkedIn = `site:linkedin.com/in (${keywords})`;
+  const queryFacebook = `site:facebook.com (${keywords})`;
+  const queryTwitter = `site:twitter.com (${keywords})`;
+  const queryInstagram = `site:instagram.com (${keywords})`;
+  const queryAll = `site:instagram.com | linkedin.com/in | facebook.com | twitter.com (${keywords})`;
+  const urlLinkedIn = `https://www.google.com/search?q=${encodeURIComponent(queryLinkedIn)}`;
+  const urlFacebook = `https://www.google.com/search?q=${encodeURIComponent(queryFacebook)}`;
+  const urlTwitter = `https://www.google.com/search?q=${encodeURIComponent(queryTwitter)}`;
+  const urlInstagram = `https://www.google.com/search?q=${encodeURIComponent(queryInstagram)}`;
+  const urlAllSocialMedia = `https://www.google.com/search?q=${encodeURIComponent(queryAll)}`;
+
+  document.getElementById("result").innerHTML = "...";
+
+  setTimeout(() => {
+    document.getElementById("result").innerHTML = `
+      <br><br>
+      <a href="${urlLinkedIn}" target="_blank">LinkedIn results</a>
+      <br><br>
+      <a href="${urlFacebook}" target="_blank">Facebook results</a>
+      <br><br>
+      <a href="${urlTwitter}" target="_blank">Twitter results</a>
+      <br><br>
+      <a href="${urlInstagram}" target="_blank">Instagram results</a>
+      <br><br>
+      <a href="${urlAllSocialMedia}" target="_blank">All results from Linkedin, Facebook, Twitter and Instagram</a>
+    `;
+  }, 100);
+}
+
+    </script>
+  </body>
+</html>
