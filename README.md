@@ -1,6 +1,6 @@
 #Generic OSINT Search Tool
 
-This is a simple Open Source Intelligence (OSINT) search tool built using only **HTML, CSS, and JavaScript**. It helps you generate search queries for Google and other search engines, including targeted searches for social media platforms using Google dorking.
+Simple Open Source Intelligence (OSINT) tool built using **HTML, CSS, and JavaScript**. It helps you generate search queries for Google and other search engines, including targeted searches for social media platforms using Google dorking.
 
 ---
 
